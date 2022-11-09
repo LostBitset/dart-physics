@@ -5,6 +5,9 @@ class ParticleState {
 	final Vec v;
 
 	const ParticleState(this.x, this.v);
+
+	@override
+	String toString() => "Particle at $x.";
 }
 
 typedef Trajectory = Iterable<ParticleState>;
@@ -29,7 +32,7 @@ abstract class Kinematic {
 
 class Dart extends Kinematic {
 	@override final Vec v_0;
-	@override final Vec a = [-9.8, 0.0, 0.0];
+	@override final Vec a = [0.0, 0.0, -9.8];
 
 	Dart(this.v_0);
 }
